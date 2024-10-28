@@ -31,7 +31,8 @@ const ClientComponent = ({ makeId, year }: ClientComponentProps) => {
 
     fetchVehicleMakes();
   }, []);
-  const Loading = () => <div>Cargando...</div>;
+  const Loading = () => <div>Loading...</div>;
+
   return (
     <section className="flex flex-col w-full bg-[#fafafa] p-8 rounded-md gap-10">
       <h1 className="text-4xl font-semibold text-[#1e69ac]">

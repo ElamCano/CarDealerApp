@@ -2,8 +2,6 @@
 
 ![cover](/public/cover.png)
 
-You can acces the deploy by clicking the folowing: [Link]()
-
 ## Autor
 
 - [Elam Cano](https://www.linkedin.com/in/elam-cano-bb0419239/)
