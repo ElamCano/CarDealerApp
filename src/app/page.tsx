@@ -15,6 +15,7 @@ const years = [
   "2021",
   "2022",
   "2023",
+  "2024",
 ];
 export default function Home() {
   const [typeState, setTypeState] = useState<boolean>(false);

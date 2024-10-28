@@ -8,6 +8,7 @@ interface ClientComponentProps {
 
 const ClientComponent = ({ makeId, year }: ClientComponentProps) => {
   const [vehicles, setVehicles] = useState<any[]>([]);
+  const [empty, setEmpty] = useState<boolean>(false);
   const [, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -32,7 +33,9 @@ const ClientComponent = ({ makeId, year }: ClientComponentProps) => {
     fetchVehicleMakes();
   }, []);
   const Loading = () => <div>Loading...</div>;
-
+  setTimeout(() => {
+    if (!vehicles.length) setEmpty(true);
+  }, 2000);
   return (
     <section className="flex flex-col w-full bg-[#fafafa] p-8 rounded-md gap-10">
       <h1 className="text-4xl font-semibold text-[#1e69ac]">
@@ -54,6 +57,11 @@ const ClientComponent = ({ makeId, year }: ClientComponentProps) => {
             </Suspense>
           );
         })}
+        {empty && (
+          <div className=" text-[#1e69ac] font-bold text-2xl">
+            No vehicles found
+          </div>
+        )}
       </div>
     </section>
   );

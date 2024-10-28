@@ -25,7 +25,7 @@ const ResultPage = async ({
   const { makeId, year } = await params;
 
   return (
-    <div className="flex flex-col gap-10 h-auto w-full bg-[#1e69ac] text-[#fafafa] p-10">
+    <div className="flex flex-col gap-10 h-auto min-h-screen w-full bg-[#1e69ac] text-[#fafafa] p-10">
       <h1 className="text-4xl font-semibold">Make ID: {makeId}</h1>
       <h2 className="text-2xl font-medium">Year: {year}</h2>
       <ClientComponent makeId={makeId} year={year} />

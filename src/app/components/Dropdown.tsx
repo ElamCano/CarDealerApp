@@ -33,7 +33,7 @@ const Dropdown = ({ type, model, setState, setMakeId, setYear }: Props) => {
         id="options"
         value={selectedOption}
         onChange={handleSelectChange}
-        className={`${type ? "bg-[#fafafa] text-[#1e69ac]" : "bg-[#1e69ac] text-[#fafafa]"} block w-full  border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:border-blue-500 p-4`}
+        className={`${type ? "bg-[#fafafa] text-[#1e69ac]" : "bg-[#1e69ac] text-[#fafafa]"} block w-full  border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:border-blue-500 p-4 cursor-pointer`}
       >
         <option value="" disabled className="text-[#000]">
           {` Select a ${type ? "type" : "model"}`}
