@@ -1,5 +1,5 @@
 import ClientComponent from "./ClientComponent";
-export async function generateStaticParams(): Promise<{ params: Params }[]> {
+export async function generateStaticParams() {
   const res = await fetch(
     "https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json",
   );
@@ -11,21 +11,18 @@ export async function generateStaticParams(): Promise<{ params: Params }[]> {
 
   return makes.flatMap((make: any) =>
     years.map((year) => ({
-      params: {
-        makeId: make.MakeId.toString(),
-        year: year.toString(),
-      },
+      makeId: make.MakeId.toString(),
+      year: year.toString(),
     })),
   );
 }
 
-interface Params {
-  makeId: string;
-  year: string;
-}
-
-const ResultPage = async ({ params }: { params: Params }) => {
-  const { makeId, year } = params;
+const ResultPage = async ({
+  params,
+}: {
+  params: { makeId: string; year: string };
+}) => {
+  const { makeId, year } = await params;
 
   return (
     <div className="flex flex-col gap-10 h-auto w-full bg-[#1e69ac] text-[#fafafa] p-10">
